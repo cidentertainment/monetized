@@ -3,3 +3,5 @@
   * `from_decimal`
   * `from_float`
   * `zero`
+
+###Add support for Canadian Currency, CAD
