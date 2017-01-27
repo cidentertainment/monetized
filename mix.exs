@@ -29,10 +29,10 @@ defmodule Monetized.Mixfile do
       {:ex_doc,  "~> 0.11.5", only: :dev},
       {:earmark, "~> 0.2.1",  only: :dev},
       {:inch_ex, "~> 0.5.1",  only: :docs},
-      {:decimal, "~> 1.1.2"},
-      {:ecto,    "~> 1.1.7"},
+      {:decimal, "~> 1.1"},
+      {:ecto,    "~> 1.1 or ~> 2.0"},
       {:benchfella, "~> 0.3.2", only: :bench},
-      {:poison, "~> 1.5 or ~> 2.0", optional: true},
+      {:poison, "~> 1.5 or ~> 2.0 or ~> 3.0", optional: true},
     ]
   end
 
