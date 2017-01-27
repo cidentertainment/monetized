@@ -271,17 +271,21 @@ defmodule Monetized.Money do
   @spec from_string(String.t, list) :: t
 
   def from_string(amount, options \\ []) when is_bitstring(amount) do
-    if currency = Currency.parse(amount) do
-      options = Dict.merge([currency: currency.key], options)
-    end
+    options =
+      case Currency.parse(amount) do
+        nil -> options
+        currency -> Dict.merge([currency: currency.key], options)
+      end
 
     amount = Regex.run(~r/-?[0-9]{1,300}(,[0-9]{3})*(\.[0-9]+)?/, amount)
     |> List.first
     |> String.replace(~r/\,/, "")
 
-    if Regex.run(~r/\./, amount) == nil do
-      amount = Enum.join([amount, ".00"])
-    end
+    amount =
+      case Regex.run(~r/\./, amount) do
+        nil -> Enum.join([amount, ".00"])
+        _ -> amount
+      end
 
     amount
     |> Decimal.new
@@ -302,7 +306,7 @@ defmodule Monetized.Money do
 
       iex> Monetized.Money.from_integer(100_000, [currency: "GBP"])
       #Money<100000.00GBP>
-      #
+
       iex> Monetized.Money.from_integer(-100, [currency: "GBP"])
       #Money<-100.00GBP>
 
