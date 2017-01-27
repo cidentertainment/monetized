@@ -5,7 +5,7 @@ defmodule Monetized.Mixfile do
     [app: :monetized,
      name: "Monetized",
      source_url: "https://github.com/theocodes/monetized",
-     version: "0.4.0+2",
+     version: "0.4.0+3",
      elixir: "~> 1.1",
      description: description,
      package: package,
