@@ -1,3 +1,8 @@
+# Archived
+
+10/11/2024
+[Email Stephen Agneta](mailto:sagneta-contractor@onlocationexp.com)
+
 # Monetized
 [![Build Status](https://travis-ci.org/theocodes/monetized.svg?branch=master)](https://travis-ci.org/theocodes/monetized)
 [![Deps Status](https://beta.hexfaktor.org/badge/all/github/theocodes/monetized.svg)](https://beta.hexfaktor.org/github/theocodes/monetized)
